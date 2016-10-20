@@ -1,0 +1,4 @@
+project=bookshelf_delivery_clone
+architecture=container
+test=minitest
+template=erb
