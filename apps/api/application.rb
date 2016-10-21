@@ -1,5 +1,5 @@
 require 'hanami/helpers'
-require 'hanami/assets'
+require_relative 'controllers/validation'
 
 module Api
   class Application < Hanami::Application
@@ -200,7 +200,7 @@ module Api
       controller.prepare do
         # include MyAuthentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
-        include Controllers::Validation
+        include Validation
       end
     end
 
