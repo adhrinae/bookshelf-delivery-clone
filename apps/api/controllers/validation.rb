@@ -13,7 +13,7 @@ module Validation
 
     def error(code)
       errors = params.errors.each_with_object({}) do |error, result|
-        result[error.fisrt] = :missing
+        result[error.first] = :missing
       end
 
       message = JSON.generate(
