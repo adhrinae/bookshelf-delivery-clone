@@ -1,23 +1,20 @@
 require 'hanami/interactor'
 
-class Book::Update
+class Book::Destroy
   include Hanami::Interactor
 
   expose :activity, :book
 
-  def initialize(id, title, author)
+  def initialize(id)
     @book = BookRepository.find(id)
-    @title = title
-    @author = author
   end
 
   def call
     if @book
-      @book.update(title: @title, author: @author)
       @activity = build_activity
 
       BookRepository.transaction do
-        BookRepository.update(@book)
+        BookRepository.delete(@book)
         ActivityRepository.create(@activity)
       end
     else
@@ -30,11 +27,9 @@ class Book::Update
     def build_activity
       Activity.new(
         timestamp: Time.now,
-        action: Activity::Action::UPDATE,
+        action: Activity::Action::DELETE,
         old_title: @book.title,
-        old_author: @book.author,
-        new_title: @title,
-        new_author: @author
+        old_author: @book.author
       )
     end
 end
