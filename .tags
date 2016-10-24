@@ -29,7 +29,6 @@ Create	apps/web/controllers/books/create.rb	/^  class Create$/;"	c	class:Web
 Create	apps/web/views/books/create.rb	/^  class Create$/;"	c	class:Web
 Destroy	apps/api/controllers/books/destroy.rb	/^  class Destroy$/;"	c	class:Api
 Destroy	apps/web/controllers/books/destroy.rb	/^  class Destroy$/;"	c	class:Web
-Destroy	apps/web/views/books/destroy.rb	/^  class Destroy$/;"	c	class:Web
 Edit	apps/web/controllers/books/edit.rb	/^  class Edit$/;"	c	class:Web
 Edit	apps/web/views/books/edit.rb	/^  class Edit$/;"	c	class:Web
 Index	apps/api/controllers/books/index.rb	/^  class Index$/;"	c	class:Api
@@ -55,7 +54,6 @@ Web	apps/web/controllers/books/update.rb	/^module Web::Controllers::Books$/;"	m
 Web	apps/web/controllers/home/index.rb	/^module Web::Controllers::Home$/;"	m
 Web	apps/web/views/application_layout.rb	/^module Web$/;"	m
 Web	apps/web/views/books/create.rb	/^module Web::Views::Books$/;"	m
-Web	apps/web/views/books/destroy.rb	/^module Web::Views::Books$/;"	m
 Web	apps/web/views/books/edit.rb	/^module Web::Views::Books$/;"	m
 Web	apps/web/views/books/index.rb	/^module Web::Views::Books$/;"	m
 Web	apps/web/views/books/new.rb	/^module Web::Views::Books$/;"	m

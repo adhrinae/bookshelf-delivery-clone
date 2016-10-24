@@ -1,3 +1,4 @@
+get '/activities', to: 'activities#index'
 delete '/books/:id', to: 'books#destroy'
 patch '/books/:id', to: 'books#update'
 get '/books/:id/edit', to: 'books#edit'
