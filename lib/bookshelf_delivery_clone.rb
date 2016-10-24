@@ -54,6 +54,16 @@ Hanami::Model.configure do
       attribute :new_title,   String
       attribute :new_author,  String
     end
+
+    collection :users do
+      entity User
+      repository UserRepository
+
+      attribute :id,       Integer
+      attribute :name,     String
+      attribute :username, String
+      attribute :password, String
+    end
   end
 end.load!
 

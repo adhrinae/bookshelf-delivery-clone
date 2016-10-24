@@ -1,0 +1,25 @@
+<%=
+  form_for form, class: 'ui form' do
+    div class: 'field' do
+      label :name
+      text_field :name
+    end
+
+    div class: 'field' do
+      label :username
+      text_field :username
+    end
+
+    div class: 'field' do
+      label :password
+      password_field :password
+    end
+
+    div class: 'field' do
+      label :password_confirmation
+      password_field :password_confirmation
+    end
+
+    submit submit_label, class: 'ui button'
+  end
+%>

@@ -44,6 +44,8 @@ New	apps/web/views/books/new.rb	/^  class New$/;"	c	class:Web
 Update	apps/api/controllers/books/update.rb	/^  class Update$/;"	c	class:Api
 Update	apps/web/controllers/books/update.rb	/^  class Update$/;"	c	class:Web
 Update	apps/web/views/books/update.rb	/^  class Update$/;"	c	class:Web
+User	lib/bookshelf_delivery_clone/entities/user.rb	/^class User$/;"	c
+UserRepository	lib/bookshelf_delivery_clone/repositories/user_repository.rb	/^class UserRepository$/;"	c
 Validation	apps/api/controllers/validation.rb	/^module Validation$/;"	m
 Views	apps/web/views/application_layout.rb	/^  module Views$/;"	m	class:Web
 Web	apps/web/application.rb	/^module Web$/;"	m
