@@ -25,23 +25,59 @@ Book	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^class Book::Updat
 BookRepository	lib/bookshelf_delivery_clone/repositories/book_repository.rb	/^class BookRepository$/;"	c
 Books	apps/api/representers/books.rb	/^  class Books < Roar::Decorator$/;"	c	class:Api
 Create	apps/api/controllers/books/create.rb	/^  class Create$/;"	c	class:Api
+Create	apps/web/controllers/books/create.rb	/^  class Create$/;"	c	class:Web
+Create	apps/web/views/books/create.rb	/^  class Create$/;"	c	class:Web
 Destroy	apps/api/controllers/books/destroy.rb	/^  class Destroy$/;"	c	class:Api
+Destroy	apps/web/controllers/books/destroy.rb	/^  class Destroy$/;"	c	class:Web
+Destroy	apps/web/views/books/destroy.rb	/^  class Destroy$/;"	c	class:Web
+Edit	apps/web/controllers/books/edit.rb	/^  class Edit$/;"	c	class:Web
+Edit	apps/web/views/books/edit.rb	/^  class Edit$/;"	c	class:Web
 Index	apps/api/controllers/books/index.rb	/^  class Index$/;"	c	class:Api
+Index	apps/web/controllers/books/index.rb	/^  class Index$/;"	c	class:Web
+Index	apps/web/controllers/home/index.rb	/^  class Index$/;"	c	class:Web
+Index	apps/web/views/books/index.rb	/^  class Index$/;"	c	class:Web
+Index	apps/web/views/home/index.rb	/^  class Index$/;"	c	class:Web
 MiniTest	spec/features_helper.rb	/^class MiniTest::Spec$/;"	c
+New	apps/web/controllers/books/new.rb	/^  class New$/;"	c	class:Web
+New	apps/web/views/books/new.rb	/^  class New$/;"	c	class:Web
 Update	apps/api/controllers/books/update.rb	/^  class Update$/;"	c	class:Api
+Update	apps/web/controllers/books/update.rb	/^  class Update$/;"	c	class:Web
+Update	apps/web/views/books/update.rb	/^  class Update$/;"	c	class:Web
 Validation	apps/api/controllers/validation.rb	/^module Validation$/;"	m
 Views	apps/web/views/application_layout.rb	/^  module Views$/;"	m	class:Web
 Web	apps/web/application.rb	/^module Web$/;"	m
+Web	apps/web/controllers/books/create.rb	/^module Web::Controllers::Books$/;"	m
+Web	apps/web/controllers/books/destroy.rb	/^module Web::Controllers::Books$/;"	m
+Web	apps/web/controllers/books/edit.rb	/^module Web::Controllers::Books$/;"	m
+Web	apps/web/controllers/books/index.rb	/^module Web::Controllers::Books$/;"	m
+Web	apps/web/controllers/books/new.rb	/^module Web::Controllers::Books$/;"	m
+Web	apps/web/controllers/books/update.rb	/^module Web::Controllers::Books$/;"	m
+Web	apps/web/controllers/home/index.rb	/^module Web::Controllers::Home$/;"	m
 Web	apps/web/views/application_layout.rb	/^module Web$/;"	m
+Web	apps/web/views/books/create.rb	/^module Web::Views::Books$/;"	m
+Web	apps/web/views/books/destroy.rb	/^module Web::Views::Books$/;"	m
+Web	apps/web/views/books/edit.rb	/^module Web::Views::Books$/;"	m
+Web	apps/web/views/books/index.rb	/^module Web::Views::Books$/;"	m
+Web	apps/web/views/books/new.rb	/^module Web::Views::Books$/;"	m
+Web	apps/web/views/books/update.rb	/^module Web::Views::Books$/;"	m
+Web	apps/web/views/home/index.rb	/^module Web::Views::Home$/;"	m
 build_activity	lib/bookshelf_delivery_clone/interactors/book/destroy.rb	/^    def build_activity$/;"	f	class:Book
 build_activity	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^    def build_activity$/;"	f	class:Book
 call	apps/api/controllers/books/create.rb	/^    def call(params)$/;"	f	class:Api.Create
 call	apps/api/controllers/books/destroy.rb	/^    def call(params)$/;"	f	class:Api.Destroy
 call	apps/api/controllers/books/index.rb	/^    def call(_)$/;"	f	class:Api.Index
 call	apps/api/controllers/books/update.rb	/^    def call(params)$/;"	f	class:Api.Update
+call	apps/web/controllers/books/create.rb	/^    def call(params)$/;"	f	class:Web.Create
+call	apps/web/controllers/books/destroy.rb	/^    def call(params)$/;"	f	class:Web.Destroy
+call	apps/web/controllers/books/edit.rb	/^    def call(params)$/;"	f	class:Web.Edit
+call	apps/web/controllers/books/index.rb	/^    def call(_)$/;"	f	class:Web.Index
+call	apps/web/controllers/books/new.rb	/^    def call(params)$/;"	f	class:Web.New
+call	apps/web/controllers/books/update.rb	/^    def call(params)$/;"	f	class:Web.Update
+call	apps/web/controllers/home/index.rb	/^    def call(params)$/;"	f	class:Web.Index
 call	lib/bookshelf_delivery_clone/interactors/book/create.rb	/^  def call$/;"	f	class:Book
 call	lib/bookshelf_delivery_clone/interactors/book/destroy.rb	/^  def call$/;"	f	class:Book
 call	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^  def call$/;"	f	class:Book
+delete_form	apps/web/views/books/index.rb	/^    def delete_form(book)$/;"	f	class:Web.Index
 error	apps/api/controllers/validation.rb	/^    def error(code)$/;"	f	class:Validation
 included	apps/api/controllers/validation.rb	/^  def self.included(action)$/;"	F	class:Validation
 initialize	lib/bookshelf_delivery_clone/interactors/book/create.rb	/^  def initialize(title, author)$/;"	f	class:Book
@@ -49,4 +85,5 @@ initialize	lib/bookshelf_delivery_clone/interactors/book/destroy.rb	/^  def init
 initialize	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^  def initialize(id, title, author)$/;"	f	class:Book
 render_failure	apps/api/controllers/books/update.rb	/^      def render_failure$/;"	f	class:Api.Update
 render_success	apps/api/controllers/books/update.rb	/^      def render_success(book)$/;"	f	class:Api.Update
+title_and_author	apps/web/views/books/index.rb	/^    def title_and_author(book)$/;"	f	class:Web.Index
 validate!	apps/api/controllers/validation.rb	/^    def validate!$/;"	f	class:Validation
