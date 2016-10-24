@@ -16,7 +16,6 @@ gem 'sqlite3'
 gem 'sass'
 
 # Auth
-gem 'warden'
 gem 'bcrypt'
 
 group :development do

@@ -1,5 +1,6 @@
 require 'hanami/helpers'
 require 'hanami/assets'
+require_relative 'controllers/authentication'
 
 module Web
   class Application < Hanami::Application
@@ -79,9 +80,6 @@ module Web
       # Configure Rack middleware for this application
       #
       # middleware.use Rack::Protection
-      middleware.use Warden::Manager do |manager|
-        manager.failure_app = Web::Controllers::Session::Failure.new
-      end
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
       # Argument: A symbol representation of a mime type, default to :html
@@ -251,7 +249,7 @@ module Web
       #
       # See: http://www.rubydoc.info/gems/hanami-controller#Configuration
       controller.prepare do
-        # include Web::Authentication # included in all the actions
+        include Web::Authentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
       end
 
