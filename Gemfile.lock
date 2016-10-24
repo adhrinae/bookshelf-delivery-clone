@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.4.0)
+    bcrypt (3.1.11)
     byebug (9.0.6)
     capybara (2.10.1)
       addressable
@@ -117,6 +118,8 @@ GEM
     uber (0.0.15)
     url_mount (0.2.1)
       rack
+    warden (1.2.6)
+      rack (>= 1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -124,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bundler
   byebug
   capybara
@@ -138,6 +142,7 @@ DEPENDENCIES
   sass
   shotgun
   sqlite3
+  warden
 
 BUNDLED WITH
    1.13.5

@@ -9,9 +9,15 @@ gem 'hanami-model', '~> 0.6'
 gem 'roar'
 gem 'multi_json'
 
+# DB
 gem 'sqlite3'
 
+# CSS
 gem 'sass'
+
+# Auth
+gem 'warden'
+gem 'bcrypt'
 
 group :development do
   # Code reloading

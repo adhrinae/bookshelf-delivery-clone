@@ -8,7 +8,9 @@
     <%= stylesheet 'semantic' %>
   </head>
   <body>
-    <h1><%= link_to 'Bookshelf', routes.home_path %></h1>
-    <%= yield %>
+    <div class="ui container">
+      <h1><%= link_to 'Bookshelf', routes.home_path %></h1>
+      <%= yield %>
+    </div>
   </body>
 </html>
