@@ -11,6 +11,8 @@ gem 'multi_json'
 
 gem 'sqlite3'
 
+gem 'sass'
+
 group :development do
   # Code reloading
   gem 'shotgun'

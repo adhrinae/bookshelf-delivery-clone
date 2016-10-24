@@ -143,12 +143,12 @@ module Web
         # See: http://hanamirb.org/guides/assets/compressors
         #
         # In order to skip stylesheet compression comment the following line
-        stylesheet_compressor :builtin
+        stylesheet_compressor :sass
 
         # Specify sources for assets
         #
         sources << [
-          'assets'
+          'vendor/assets'
         ]
       end
 
@@ -229,12 +229,9 @@ module Web
         form-action 'self';
         frame-ancestors 'self';
         base-uri 'self';
-        default-src 'none';
-        script-src 'self';
         connect-src 'self';
         img-src 'self' https: data:;
         style-src 'self' 'unsafe-inline' https:;
-        font-src 'self';
         object-src 'none';
         plugin-types application/pdf;
         child-src 'self';
