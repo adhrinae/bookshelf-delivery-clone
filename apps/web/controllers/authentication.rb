@@ -6,6 +6,8 @@ module Web
       end
     end
 
+    private
+
     def current_user
       @current_user ||= UserRepository.find(session[:user_id])
     end

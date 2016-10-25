@@ -1,6 +1,7 @@
 <div class="ui divider"></div>
 <% if current_user %>
   <%= greeting(current_user) %>
+  <%= link_to 'Logout', routes.logout_path, class: 'ui small button' %>
 <% else %>
   <%= login_form %>
 <% end %>

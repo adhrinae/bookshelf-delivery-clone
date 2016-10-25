@@ -1,7 +1,7 @@
 get '/', to: 'home#index', as: :home
 post '/', to: 'session#new', as: :login
 
-delete '/logout/:id', to: 'session#destroy'
+get '/logout', to: 'session#destroy', as: :logout
 
 resources :activities, only: [:index]
 resources :books
