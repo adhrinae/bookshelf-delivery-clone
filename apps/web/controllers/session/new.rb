@@ -1,6 +1,7 @@
 module Web::Controllers::Session
   class New
     include Web::Action
+    include Web::Authentication::Skip
 
     params do
       required(:session).schema do

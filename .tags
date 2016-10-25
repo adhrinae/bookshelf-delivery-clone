@@ -133,6 +133,7 @@ initialize	lib/bookshelf_delivery_clone/interactors/book/destroy.rb	/^  def init
 initialize	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^  def initialize(id, title, author)$/;"	f	class:Book
 initialize	lib/bookshelf_delivery_clone/interactors/user/create.rb	/^  def initialize(name, username, password)$/;"	f	class:User
 log_in	apps/web/controllers/session/new.rb	/^    def log_in(user)$/;"	f	class:Web.New
+log_out	apps/web/controllers/session/destroy.rb	/^    def log_out$/;"	f	class:Web.Destroy
 login_form	apps/web/views/home/index.rb	/^    def login_form$/;"	f	class:Web.Index
 newest_to_oldest	lib/bookshelf_delivery_clone/repositories/activity_repository.rb	/^  def self.newest_to_oldest$/;"	F	class:ActivityRepository
 render_failure	apps/api/controllers/books/update.rb	/^      def render_failure$/;"	f	class:Api.Update
