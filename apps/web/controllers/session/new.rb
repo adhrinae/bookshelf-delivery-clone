@@ -14,13 +14,18 @@ module Web::Controllers::Session
 
       @user = UserRepository.find_by_username(params[:session][:username])
 
-      if @user
+      if @user && @user.authenticate(params[:session][:password])
         log_in(@user)
         redirect_to routes.home_path
       else
         status 401, "Wrong username or password"
-        redirect_to routes.users_path
       end
+    end
+
+    private
+
+    def log_in(user)
+      session[:user_id] = user.id
     end
   end
 end

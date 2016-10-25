@@ -1,3 +1,10 @@
+<div class="ui divider"></div>
+<% if current_user %>
+  <%= greeting(current_user) %>
+<% else %>
+  <%= login_form %>
+<% end %>
+<div class="ui divider"></div>
 <ul>
   <li><%= link_to 'Books', routes.books_path %></li>
   <li><%= link_to 'Activities', routes.activities_path %></li>

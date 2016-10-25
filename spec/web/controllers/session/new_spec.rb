@@ -3,14 +3,21 @@ require_relative '../../../../apps/web/controllers/session/new'
 
 describe Web::Controllers::Session::New do
   let(:action) { Web::Controllers::Session::New.new }
-  let(:params) { Hash[] }
+  let(:valid) { Hash[session: { username: 'tester1', password: 'foobar' }] }
+  let(:invalid) { Hash[session: { username: 'tester1', password: 'foobaz' }] }
 
   before do
-    @user = User.new(name: 'foo', username: 'bar', password: Bcrypt::Password.create("foobar"))
+    UserRepository.clear
+    @user = UserRepository.create(User.new(name: 'test_user', username: 'tester1', password: BCrypt::Password.create('foobar')))
   end
 
-  it 'is successful' do
-    response = action.call(params)
-    response[0].must_equal 200
+  it "redirects after successful login" do
+    response = action.call(valid)
+    response[1]['Location'].must_equal '/'
+  end
+
+  it "redirects after failed login" do
+    response = action.call(invalid)
+    response[0].must_equal 401
   end
 end
