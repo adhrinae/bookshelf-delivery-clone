@@ -38,6 +38,7 @@ Hanami::Model.configure do
       repository BookRepository
 
       attribute :id,   Integer
+      attribute :user_id,   Integer
       attribute :title, String
       attribute :author, String
     end

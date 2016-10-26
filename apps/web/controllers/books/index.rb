@@ -5,7 +5,7 @@ module Web::Controllers::Books
     expose :books
 
     def call(_)
-      @books = BookRepository.all
+      @books = BookRepository.get_books_of(current_user)
     end
   end
 end

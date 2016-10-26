@@ -6,8 +6,8 @@ class User::Create
   expose :user
 
   def initialize(name, username, password)
-    encrypted_password = BCrypt::Password.create(password)
-    @user = User.new(name: name, username: name, password: encrypted_password)
+    password_hash = BCrypt::Password.create(password)
+    @user = User.new(name: name, username: name, password: password_hash)
   end
 
   def call

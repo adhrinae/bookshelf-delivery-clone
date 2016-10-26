@@ -21,6 +21,8 @@ module Web::Controllers::Users
 
       flash[:success] = "User #{@user.name} Successfuly Created."
 
+      session[:user_id] = @user.id
+
       redirect_to routes.home_path
     end
   end

@@ -19,7 +19,7 @@ module Web::Controllers::Session
         log_in(@user)
         redirect_to routes.home_path
       else
-        status 401, "Wrong username or password"
+        redirect_to routes.home_path
       end
     end
 

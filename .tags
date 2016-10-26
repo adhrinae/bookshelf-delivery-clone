@@ -52,6 +52,7 @@ New	apps/web/controllers/users/new.rb	/^  class New$/;"	c	class:Web
 New	apps/web/views/books/new.rb	/^  class New$/;"	c	class:Web
 New	apps/web/views/session/new.rb	/^  class New$/;"	c	class:Web
 New	apps/web/views/users/new.rb	/^  class New$/;"	c	class:Web
+Skip	apps/web/controllers/authentication.rb	/^    module Skip$/;"	m	class:Web.Authentication
 Update	apps/api/controllers/books/update.rb	/^  class Update$/;"	c	class:Api
 Update	apps/web/controllers/books/update.rb	/^  class Update$/;"	c	class:Web
 Update	apps/web/views/books/update.rb	/^  class Update$/;"	c	class:Web
@@ -89,6 +90,7 @@ Web	apps/web/views/session/new.rb	/^module Web::Views::Session$/;"	m
 Web	apps/web/views/users/create.rb	/^module Web::Views::Users$/;"	m
 Web	apps/web/views/users/new.rb	/^module Web::Views::Users$/;"	m
 authenticate	lib/bookshelf_delivery_clone/entities/user.rb	/^  def authenticate(password)$/;"	f	class:User
+books	lib/bookshelf_delivery_clone/entities/user.rb	/^  def books$/;"	f	class:User
 build_activity	lib/bookshelf_delivery_clone/interactors/book/destroy.rb	/^    def build_activity$/;"	f	class:Book
 build_activity	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^    def build_activity$/;"	f	class:Book
 call	apps/api/controllers/books/create.rb	/^    def call(params)$/;"	f	class:Api.Create
@@ -125,6 +127,7 @@ form	apps/web/views/books/new.rb	/^    def form$/;"	f	class:Web.New
 form	apps/web/views/books/update.rb	/^    def form$/;"	f	class:Web.Update
 form	apps/web/views/users/new.rb	/^    def form$/;"	f	class:Web.New
 format_time	apps/web/views/activities/index.rb	/^    def format_time(time)$/;"	f	class:Web.Index
+get_books_of	lib/bookshelf_delivery_clone/repositories/book_repository.rb	/^  def self.get_books_of(user)$/;"	F	class:BookRepository
 greeting	apps/web/views/home/index.rb	/^    def greeting(current_user)$/;"	f	class:Web.Index
 included	apps/api/controllers/validation.rb	/^  def self.included(action)$/;"	F	class:Validation
 included	apps/web/controllers/authentication.rb	/^    def self.included(action)$/;"	F	class:Web.Authentication
@@ -134,6 +137,8 @@ initialize	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^  def initi
 initialize	lib/bookshelf_delivery_clone/interactors/user/create.rb	/^  def initialize(name, username, password)$/;"	f	class:User
 log_in	apps/web/controllers/session/new.rb	/^    def log_in(user)$/;"	f	class:Web.New
 log_out	apps/web/controllers/session/destroy.rb	/^    def log_out$/;"	f	class:Web.Destroy
+logged_in?	apps/web/controllers/authentication.rb	/^      def logged_in?$/;"	f	class:Web.Authentication.Skip
+logged_in?	apps/web/controllers/authentication.rb	/^    def logged_in?$/;"	f	class:Web.Authentication
 login_form	apps/web/views/home/index.rb	/^    def login_form$/;"	f	class:Web.Index
 newest_to_oldest	lib/bookshelf_delivery_clone/repositories/activity_repository.rb	/^  def self.newest_to_oldest$/;"	F	class:ActivityRepository
 render_failure	apps/api/controllers/books/update.rb	/^      def render_failure$/;"	f	class:Api.Update
@@ -145,4 +150,5 @@ submit_label	apps/web/views/books/update.rb	/^    def submit_label$/;"	f	class:W
 submit_label	apps/web/views/users/new.rb	/^    def submit_label$/;"	f	class:Web.New
 title_and_author	apps/web/views/books/index.rb	/^    def title_and_author(book)$/;"	f	class:Web.Index
 update_description	apps/web/views/activities/index.rb	/^      def update_description(activity)$/;"	f	class:Web.Index
+user	lib/bookshelf_delivery_clone/entities/book.rb	/^  def user$/;"	f	class:Book
 validate!	apps/api/controllers/validation.rb	/^    def validate!$/;"	f	class:Validation
