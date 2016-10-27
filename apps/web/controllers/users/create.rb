@@ -8,6 +8,7 @@ module Web::Controllers::Users
       required(:user).schema do
         required(:name).filled(:str?)
         required(:username).filled(:str?)
+        required(:email).filled(:str?)
         required(:password).filled(:str?).confirmation
       end
     end
@@ -15,13 +16,9 @@ module Web::Controllers::Users
     def call(params)
       halt 401 unless params.valid?
 
-      name, username, password = params[:user].to_h.values_at(:name, :username, :password)
-      result = User::Create.new(name, username, password).call
+      name, username, email, password = params[:user].to_h.values_at(:name, :username, :email, :password)
+      result = User::Create.new(name, username, email, password).call
       @user = result.user
-
-      flash[:success] = "User #{@user.name} Successfuly Created."
-
-      session[:user_id] = @user.id
 
       redirect_to routes.home_path
     end

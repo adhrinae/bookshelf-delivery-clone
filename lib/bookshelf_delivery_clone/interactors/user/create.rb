@@ -6,14 +6,16 @@ class User::Create
 
   expose :user
 
-  def initialize(name, username, password)
+  def initialize(name, username, email, password)
     password_hash = digest(password)
-    @user = User.new(name: name, username: name, password_digest: password_hash)
+    @user = User.new(name: name, username: name, email: email,
+                     password_digest: password_hash)
   end
 
   def call
     create_activation_digest
     @user = UserRepository.create(@user)
+    Mailers::ConfirmEmailAddress.deliver(user: @user)
   end
 
   private
