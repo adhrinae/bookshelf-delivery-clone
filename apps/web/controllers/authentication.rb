@@ -3,21 +3,25 @@ module Web
     module Skip
       private
 
-      def logged_in?
+      def authenticate!
       end
     end
 
     def self.included(action)
       action.class_eval do
-        before :logged_in?
+        before :authenticate!
         expose :current_user
       end
     end
 
     private
 
-    def logged_in?
-      redirect_to '/' if current_user.nil?
+    def authenticate!
+      redirect_to '/' unless authenticated?
+    end
+
+    def authenticated?
+      !current_user.nil?
     end
 
     def current_user

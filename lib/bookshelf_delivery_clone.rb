@@ -60,10 +60,17 @@ Hanami::Model.configure do
       entity User
       repository UserRepository
 
-      attribute :id,       Integer
-      attribute :name,     String
-      attribute :username, String
-      attribute :password, String
+      attribute :id,                Integer
+      attribute :name,              String
+      attribute :username,          String
+      attribute :email,             String
+      attribute :password_digest,   String
+      attribute :activation_digest, String
+      attribute :activated,         TrueClass
+      attribute :reset_digest,      String
+      attribute :reset_sent_at,     DateTime
+      attribute :created_at,        DateTime
+      attribute :updated_at,        DateTime
     end
   end
 end.load!
