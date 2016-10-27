@@ -16,6 +16,6 @@ class Mailers::ConfirmEmailAddress
   end
 
   def activation_uri
-    routes.activate_path(user)
+    Web::Routes.url(:activate, token: user.activation_token, email: user.email)
   end
 end

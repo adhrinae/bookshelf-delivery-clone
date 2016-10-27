@@ -65,8 +65,9 @@ Hanami::Model.configure do
       attribute :username,          String
       attribute :email,             String
       attribute :password_digest,   String
+      attribute :activation_token,  String
       attribute :activation_digest, String
-      attribute :activated,         TrueClass
+      attribute :activated,         Boolean
       attribute :reset_digest,      String
       attribute :reset_sent_at,     DateTime
       attribute :created_at,        DateTime
@@ -80,7 +81,15 @@ Hanami::Mailer.configure do
 
   # See http://hanamirb.org/guides/mailers/delivery
   delivery do
-    development :test
+    development :smtp,
+      address: 'smtp.sendgrid.net',
+      port: 587,
+      domain: 'bookshelf.org',
+      user_name: 'emaren84',
+      password: 'dufthl84',
+      authentication: 'plain',
+      enable_starttls_auto: true
+
     test        :test
     # production :smtp, address: ENV['SMTP_PORT'], port: 1025
   end

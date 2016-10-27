@@ -16,8 +16,12 @@ module Web::Controllers::Session
       @user = UserRepository.find_by_username(params[:session][:username])
 
       if @user && @user.authenticate(params[:session][:password])
-        log_in(@user)
-        redirect_to routes.home_path
+        if @user.activated
+          log_in(@user)
+          redirect_to routes.home_path
+        else
+          redirect_to routes.home_path
+        end
       else
         redirect_to routes.home_path
       end

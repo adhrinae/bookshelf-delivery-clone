@@ -1,6 +1,7 @@
 module Web::Controllers::Users
   class Create
     include Web::Action
+    include Web::Authentication::Skip
 
     expose :user
 

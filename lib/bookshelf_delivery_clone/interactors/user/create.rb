@@ -1,5 +1,4 @@
 require "hanami/interactor"
-require "securerandom"
 
 class User::Create
   include Hanami::Interactor
@@ -13,7 +12,7 @@ class User::Create
   end
 
   def call
-    create_activation_digest
+    @user.create_activation_digest
     @user = UserRepository.create(@user)
     Mailers::ConfirmEmailAddress.deliver(user: @user)
   end
@@ -22,14 +21,5 @@ class User::Create
 
   def digest(string)
     BCrypt::Password.create(string)
-  end
-
-  def create_activation_digest
-    @user.activation_token = new_token
-    @user.activation_digest = digest(@user.activation_token)
-  end
-
-  def new_token
-    SecureRandom.urlsafe_base64
   end
 end
