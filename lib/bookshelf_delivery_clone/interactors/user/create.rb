@@ -7,7 +7,7 @@ class User::Create
 
   def initialize(name, username, email, password)
     password_hash = digest(password)
-    @user = User.new(name: name, username: name, email: email,
+    @user = User.new(name: name, username: username, email: email,
                      password_digest: password_hash)
   end
 

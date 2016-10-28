@@ -2,6 +2,7 @@ require "securerandom"
 
 class User
   include Hanami::Entity
+  attr_accessor :reset_token
   attributes :name, :username, :email, :password_digest, :activation_token, :activation_digest,
              :activated, :reset_digest, :reset_sent_at, :created_at, :updated_at
 
@@ -18,8 +19,17 @@ class User
     self.activation_digest = digest(self.activation_token)
   end
 
-  def authenticated?(token)
-    digest = self.activation_digest
+  def create_reset_digest
+    self.reset_token = new_token
+    reset_digest = digest(self.reset_token)
+    reset_sent_at = Time.now
+
+    self.update(reset_digest: reset_digest, reset_sent_at: reset_sent_at)
+    UserRepository.update(self)
+  end
+
+  def authenticated?(type, token)
+    digest = self.send("#{type}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
   end

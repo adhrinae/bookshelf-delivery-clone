@@ -6,7 +6,7 @@ module Web::Controllers::Users
     def call(params)
       @user = UserRepository.find_by_email(params[:email])
 
-      if @user && !@user.activated && @user.authenticated?(params[:token])
+      if @user && !@user.activated && @user.authenticated?('activation', params[:token])
         activate_user
 
         session[:user_id] = @user.id

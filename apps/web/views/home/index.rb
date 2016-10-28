@@ -18,6 +18,10 @@ module Web::Views::Home
       end
     end
 
+    def forgot_password_link
+      link_to 'Forgot password?', routes.new_password_reset_path
+    end
+
     def greeting(current_user)
       "Hello, #{current_user.name}!"
     end

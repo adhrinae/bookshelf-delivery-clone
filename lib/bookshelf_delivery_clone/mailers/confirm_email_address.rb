@@ -5,6 +5,10 @@ class Mailers::ConfirmEmailAddress
   to      :recipient
   subject :subject
 
+  def activation_uri
+    Web::Routes.url(:activate, token: user.activation_token, email: user.email)
+  end
+
   private
 
   def recipient
@@ -13,9 +17,5 @@ class Mailers::ConfirmEmailAddress
 
   def subject
     "Welcome #{user.name}!"
-  end
-
-  def activation_uri
-    Web::Routes.url(:activate, token: user.activation_token, email: user.email)
   end
 end

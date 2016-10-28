@@ -5,6 +5,7 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 Action	lib/bookshelf_delivery_clone/entities/activity.rb	/^  module Action$/;"	m	class:Activity
+Activate	apps/web/controllers/users/activate.rb	/^  class Activate$/;"	c	class:Web
 Activity	lib/bookshelf_delivery_clone/entities/activity.rb	/^class Activity$/;"	c
 ActivityRepository	lib/bookshelf_delivery_clone/repositories/activity_repository.rb	/^class ActivityRepository$/;"	c
 Api	apps/api/application.rb	/^module Api$/;"	m
@@ -75,6 +76,7 @@ Web	apps/web/controllers/home/index.rb	/^module Web::Controllers::Home$/;"	m
 Web	apps/web/controllers/session/destroy.rb	/^module Web::Controllers::Session$/;"	m
 Web	apps/web/controllers/session/failure.rb	/^module Web::Controllers::Session$/;"	m
 Web	apps/web/controllers/session/new.rb	/^module Web::Controllers::Session$/;"	m
+Web	apps/web/controllers/users/activate.rb	/^module Web::Controllers::Users$/;"	m
 Web	apps/web/controllers/users/create.rb	/^module Web::Controllers::Users$/;"	m
 Web	apps/web/controllers/users/new.rb	/^module Web::Controllers::Users$/;"	m
 Web	apps/web/views/activities/index.rb	/^module Web::Views::Activities$/;"	m
@@ -90,11 +92,13 @@ Web	apps/web/views/session/failure.rb	/^module Web::Views::Session$/;"	m
 Web	apps/web/views/session/new.rb	/^module Web::Views::Session$/;"	m
 Web	apps/web/views/users/create.rb	/^module Web::Views::Users$/;"	m
 Web	apps/web/views/users/new.rb	/^module Web::Views::Users$/;"	m
+activate_user	apps/web/controllers/users/activate.rb	/^    def activate_user$/;"	f	class:Web.Activate
 activation_uri	lib/bookshelf_delivery_clone/mailers/confirm_email_address.rb	/^  def activation_uri$/;"	f	class:Mailers
 authenticate	lib/bookshelf_delivery_clone/entities/user.rb	/^  def authenticate(password)$/;"	f	class:User
 authenticate!	apps/web/controllers/authentication.rb	/^      def authenticate!$/;"	f	class:Web.Authentication.Skip
 authenticate!	apps/web/controllers/authentication.rb	/^    def authenticate!$/;"	f	class:Web.Authentication
 authenticated?	apps/web/controllers/authentication.rb	/^    def authenticated?$/;"	f	class:Web.Authentication
+authenticated?	lib/bookshelf_delivery_clone/entities/user.rb	/^  def authenticated?(token)$/;"	f	class:User
 books	lib/bookshelf_delivery_clone/entities/user.rb	/^  def books$/;"	f	class:User
 build_activity	lib/bookshelf_delivery_clone/interactors/book/destroy.rb	/^    def build_activity$/;"	f	class:Book
 build_activity	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^    def build_activity$/;"	f	class:Book
@@ -113,20 +117,23 @@ call	apps/web/controllers/home/index.rb	/^    def call(params)$/;"	f	class:Web.I
 call	apps/web/controllers/session/destroy.rb	/^    def call(params)$/;"	f	class:Web.Destroy
 call	apps/web/controllers/session/failure.rb	/^    def call(_params)$/;"	f	class:Web.Failure
 call	apps/web/controllers/session/new.rb	/^    def call(params)$/;"	f	class:Web.New
+call	apps/web/controllers/users/activate.rb	/^    def call(params)$/;"	f	class:Web.Activate
 call	apps/web/controllers/users/create.rb	/^    def call(params)$/;"	f	class:Web.Create
 call	apps/web/controllers/users/new.rb	/^    def call(params)$/;"	f	class:Web.New
 call	lib/bookshelf_delivery_clone/interactors/book/create.rb	/^  def call$/;"	f	class:Book
 call	lib/bookshelf_delivery_clone/interactors/book/destroy.rb	/^  def call$/;"	f	class:Book
 call	lib/bookshelf_delivery_clone/interactors/book/update.rb	/^  def call$/;"	f	class:Book
 call	lib/bookshelf_delivery_clone/interactors/user/create.rb	/^  def call$/;"	f	class:User
-create_activation_digest	lib/bookshelf_delivery_clone/interactors/user/create.rb	/^  def create_activation_digest$/;"	f	class:User
+create_activation_digest	lib/bookshelf_delivery_clone/entities/user.rb	/^  def create_activation_digest$/;"	f	class:User
 create_description	apps/web/views/activities/index.rb	/^      def create_description(activity)$/;"	f	class:Web.Index
 current_user	apps/web/controllers/authentication.rb	/^    def current_user$/;"	f	class:Web.Authentication
 delete_description	apps/web/views/activities/index.rb	/^      def delete_description(activity)$/;"	f	class:Web.Index
 delete_form	apps/web/views/books/index.rb	/^    def delete_form(book)$/;"	f	class:Web.Index
 description	apps/web/views/activities/index.rb	/^    def description(activity)$/;"	f	class:Web.Index
+digest	lib/bookshelf_delivery_clone/entities/user.rb	/^  def digest(string)$/;"	f	class:User
 digest	lib/bookshelf_delivery_clone/interactors/user/create.rb	/^  def digest(string)$/;"	f	class:User
 error	apps/api/controllers/validation.rb	/^    def error(code)$/;"	f	class:Validation
+find_by_email	lib/bookshelf_delivery_clone/repositories/user_repository.rb	/^  def self.find_by_email(email)$/;"	F	class:UserRepository.find_by_username
 find_by_username	lib/bookshelf_delivery_clone/repositories/user_repository.rb	/^  def self.find_by_username(username)$/;"	F	class:UserRepository
 form	apps/web/views/books/create.rb	/^    def form$/;"	f	class:Web.Create
 form	apps/web/views/books/edit.rb	/^    def form$/;"	f	class:Web.Edit
@@ -145,7 +152,7 @@ initialize	lib/bookshelf_delivery_clone/interactors/user/create.rb	/^  def initi
 log_in	apps/web/controllers/session/new.rb	/^    def log_in(user)$/;"	f	class:Web.New
 log_out	apps/web/controllers/session/destroy.rb	/^    def log_out$/;"	f	class:Web.Destroy
 login_form	apps/web/views/home/index.rb	/^    def login_form$/;"	f	class:Web.Index
-new_token	lib/bookshelf_delivery_clone/interactors/user/create.rb	/^  def new_token$/;"	f	class:User
+new_token	lib/bookshelf_delivery_clone/entities/user.rb	/^  def new_token$/;"	f	class:User
 newest_to_oldest	lib/bookshelf_delivery_clone/repositories/activity_repository.rb	/^  def self.newest_to_oldest$/;"	F	class:ActivityRepository
 recipient	lib/bookshelf_delivery_clone/mailers/confirm_email_address.rb	/^  def recipient$/;"	f	class:Mailers
 render_failure	apps/api/controllers/books/update.rb	/^      def render_failure$/;"	f	class:Api.Update

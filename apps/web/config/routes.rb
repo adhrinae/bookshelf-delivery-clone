@@ -8,3 +8,4 @@ get '/logout', to: 'session#destroy', as: :logout
 resources :activities, only: [:index]
 resources :books
 resources :users, only: [:new, :create, :edit, :update, :destroy, :activate]
+resources :password_resets, only: [:new, :create, :edit, :update]
