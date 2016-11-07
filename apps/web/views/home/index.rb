@@ -18,6 +18,13 @@ module Web::Views::Home
       end
     end
 
+    def encrypted_form
+      form_for :encrypted, routes.login_path do
+        hidden_field :username
+        hidden_field :password
+      end
+    end
+
     def forgot_password_link
       link_to 'Forgot password?', routes.new_password_reset_path
     end

@@ -15,6 +15,9 @@ gem 'sqlite3'
 # CSS
 gem 'sass'
 
+# ES6
+gem 'babel-transpiler', '~> 0.7.0'
+
 # Auth
 gem 'bcrypt'
 

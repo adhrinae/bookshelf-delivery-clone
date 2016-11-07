@@ -2,6 +2,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.4.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     byebug (9.0.6)
     capybara (2.10.1)
@@ -42,6 +46,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.9, >= 0.9.0)
+    execjs (2.7.0)
     hanami (0.8.0)
       bundler (~> 1.6)
       hanami-assets (~> 0.3)
@@ -125,6 +130,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  babel-transpiler (~> 0.7.0)
   bcrypt
   bundler
   byebug
@@ -142,4 +148,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   1.13.5
+   1.13.6

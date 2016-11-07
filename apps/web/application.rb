@@ -149,6 +149,7 @@ module Web
         # Specify sources for assets
         #
         sources << [
+          'assets',
           'vendor/assets'
         ]
       end

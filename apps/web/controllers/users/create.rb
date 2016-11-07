@@ -6,7 +6,7 @@ module Web::Controllers::Users
     expose :user
 
     params do
-      required(:user).schema do
+      required(:encrypted).schema do
         required(:name).filled(:str?)
         required(:username).filled(:str?)
         required(:email).filled(:str?)
@@ -15,9 +15,10 @@ module Web::Controllers::Users
     end
 
     def call(params)
+      byebug
       halt 401 unless params.valid?
 
-      name, username, email, password = params[:user].to_h.values_at(:name, :username, :email, :password)
+      name, username, email, password = params[:encrypted].to_h.values_at(:name, :username, :email, :password)
       result = User::Create.new(name, username, email, password).call
       @user = result.user
 
